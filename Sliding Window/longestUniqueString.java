@@ -14,6 +14,10 @@ class Solution{
             
             // putting the j-th element
             map.put(S.charAt(j), map.getOrDefault(S.charAt(j), 0) + 1);
+
+            if(map.get(S.charAt(j)) == 1){
+                count += 1;
+            }
             
             // eliminating i-th till map[j] is unique
             // making the window valid
@@ -25,6 +29,7 @@ class Solution{
                 i += 1;
             }
             
+            // here we can use count i.e, res = Math.max(res, count )
             res = Math.max(res, j - i + 1);
             j += 1;
         }
